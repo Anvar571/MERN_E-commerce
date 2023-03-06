@@ -53,10 +53,15 @@ const updateCategory = async(req, res, next) =>{
     }
 }
 
+const uploadCategoryImage = async (req, res) => {
+    console.log(req.file);
+}
+
 module.exports = {
     createCategory,
     updateCategory,
     deleteCategory,
     getAllCategory,
-    getOneCategory
+    getOneCategory,
+    uploadCategoryImage
 }

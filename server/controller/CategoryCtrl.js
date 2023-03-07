@@ -26,7 +26,21 @@ const getAllCategory = async(req, res, next) =>{
 const getOneCategory = async(req, res, next) =>{
     const {id} = req.params;
     try {
-        const oneCategory = await CategoryModule.findById(id);
+        const oneCategory = await CategoryModule.aggregate([
+            {
+                $match:  {
+                    _id: id
+                }
+            },
+            {
+                $lookup: {
+                    from: "product",
+                    localField: "name",
+                    foreignField: "category",
+                    as: "categorys"
+                }
+            }
+        ]);
         res.json({oneCategory});
     } catch (error) {
         next(error)

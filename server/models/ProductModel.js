@@ -2,11 +2,6 @@ const mongoose = require('mongoose'); // Erase if already required
 
 // Declare the Schema of the Mongo model
 var ProductSchema = new mongoose.Schema({
-    // product_id: {
-    //     type: String,
-    //     trim: true,
-    //     required: true
-    // },
     title:{
         type:String,
         required:true,
@@ -27,6 +22,10 @@ var ProductSchema = new mongoose.Schema({
     category: {
         type: String,
         required: true,
+    },
+    brand: {
+        type: String,
+        required: true
     },
     checked: {
         type: Boolean,

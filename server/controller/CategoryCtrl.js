@@ -1,4 +1,6 @@
-const CategoryModule = require("../models/CategoryModule")
+const CategoryModule = require("../models/CategoryModule");
+const cloudinaryUpload = require("../utils/CloudImage");
+const fs = require("fs");
 
 const createCategory = async (req, res,next) => {
     try {
@@ -54,7 +56,27 @@ const updateCategory = async(req, res, next) =>{
 }
 
 const uploadCategoryImage = async (req, res) => {
-    console.log(req.file);
+    const { id } = req.params;
+    try {
+        const uploader = (path) => cloudinaryUpload(path, "images");
+        const urls = [];
+        for (let file of req.files){
+            const {path} = file;
+            const newPath = await uploader(path);
+            urls.push(newPath);
+            fs.unlinkSync(path)
+        }
+        
+        const findAndUpdate = await CategoryModule.findByIdAndUpdate(id, {
+            images: urls.map(file => {
+                return file
+            }, {new: true})
+        });
+        
+        res.json({findAndUpdate});
+    } catch (error) {
+        next(error)
+    }
 }
 
 module.exports = {

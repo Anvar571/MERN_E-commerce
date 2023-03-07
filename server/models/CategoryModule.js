@@ -11,7 +11,10 @@ const CategorySchema = new mongoose.Schema({
     description: {
         type: String,
     },
-    images: []
+    images: [],
+    products: [
+        {type: mongoose.Types.ObjectId, ref: "product"}
+    ]
 }, {timestamps: true});
 
 //Export the model

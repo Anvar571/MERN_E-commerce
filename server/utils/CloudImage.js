@@ -8,7 +8,7 @@ cloudinary.config({
   
 const cloudinaryUpload = async (filePath) => {
     return new Promise((res, rej) => {
-        cloudinary.v2.uploader.upload(filePath, (result) => {
+        cloudinary.uploader.upload(filePath, (result) => {
             res(
                 {
                     url: result.secure_url

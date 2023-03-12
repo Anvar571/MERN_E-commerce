@@ -2,8 +2,10 @@ import React from 'react'
 
 function Login() {
   return (
-    <div>
-      Login
+    <div className='login-page'>
+      <form action="">
+        
+      </form>
     </div>
   )
 }

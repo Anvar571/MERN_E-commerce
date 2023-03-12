@@ -7,14 +7,22 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "roboto";
+  font-family: "Roboto";
+}
+
+body {
+  background-color: rgb(238, 236, 243);
 }
 
 .App {
-  max-width: 1230px;
   min-height: 100vh;
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+.mainPage {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 a {

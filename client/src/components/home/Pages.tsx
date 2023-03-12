@@ -9,6 +9,7 @@ import OneProduct from './OneProduct/OneProduct';
 
 export default function Pages() {
   return (
+    <div className='mainPage'>
     <Routes>
       <Route path="/" element={<Products />} />
       <Route path="/detail/:id" element={<OneProduct/>}/>
@@ -18,5 +19,6 @@ export default function Pages() {
 
       <Route path="*" element={<NotFound/>}/>
     </Routes>
+    </div>
   )
 }

@@ -16,13 +16,14 @@ export default function Header() {
 
         <div className='logo'>
             <h1>
-                <Link to="/">Shopping</Link>
+                <Link to="/" className='header-title'>shop market</Link>
             </h1>
         </div>
 
         <ul>
             <li><Link to="/">Products</Link></li>
-            <li><Link to="/login">Login Register</Link></li>
+            <li><Link className='auth-header' to="/login">Login</Link></li>
+            <li><Link className='auth-header' to="/register" >Register</Link></li>
 
             <li>
                 <img src={Close} alt="" width="30" className='menu'/>

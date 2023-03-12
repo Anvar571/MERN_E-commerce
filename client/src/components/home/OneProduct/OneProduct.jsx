@@ -8,7 +8,7 @@ function OneProduct() {
     const state = useContext(State);
     const {product} = state.ProductApi.products;
     const [detailsP, setDetailsP] = useState([]);
-
+    
     useEffect(() => {
         if (params) {
             product.forEach(product => {

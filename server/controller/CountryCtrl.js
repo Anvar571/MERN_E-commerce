@@ -41,8 +41,8 @@ const getOneCountry = async (req, res, next) => {
 
 const getAllCountry = async (req, res, next) => {
     try {
-        const allCountry = await CountryModule.find();
-        res.json({allCountry});
+        const countrys = await CountryModule.find();
+        res.json({countrys});
     } catch (error) {
         next(error)
     }

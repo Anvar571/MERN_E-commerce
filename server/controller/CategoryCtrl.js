@@ -16,8 +16,8 @@ const createCategory = async (req, res,next) => {
 
 const getAllCategory = async(req, res, next) =>{
     try {
-        const allCategory = await CategoryModule.find({});
-        res.json({allCategory});
+        const categorys = await CategoryModule.find({});
+        res.json({categorys});
     } catch (error) {
         next(error)
     }

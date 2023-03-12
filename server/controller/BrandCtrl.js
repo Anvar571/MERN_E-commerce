@@ -42,8 +42,8 @@ const getOneBrand = async (req, res, next) => {
 
 const getAllBrand = async (req, res, next) => {
     try {
-        const allBrand = await BrandModule.find({});
-        res.json({allBrand});
+        const brands = await BrandModule.find({});
+        res.json({brands});
     } catch (error) {
         next(error)
     }
